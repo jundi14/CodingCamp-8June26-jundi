@@ -210,10 +210,14 @@ body > section {
   color: #444;
 }
 
-#expense-chart {
+#expense-chart {  
   display: block;
-  width: 100% !important;
-  max-width: 100%;
+  max-width: fit-content;
+  max-height: fit-content;
+  width: 50% !important;
+  max-width: 50%;
+  margin-left: auto;
+  margin-right: auto;
   height: auto !important;
   box-sizing: border-box;
 }
