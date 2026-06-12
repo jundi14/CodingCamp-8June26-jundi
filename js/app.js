@@ -75,7 +75,7 @@ function validateAmount(value) {
     return { valid: false, error: 'Amount must be 9,999,999.99 or less.' };
   }
 
-  if (/\.\d{3,}$/.test(trimmed)) {
+  if (/\.\d{3,}Rp/.test(trimmed)) {
     return { valid: false, error: 'Amount must have no more than 2 decimal places.' };
   }
 
@@ -177,13 +177,24 @@ function buildChartDataset(totals) {
 }
 
 /**
+ * Memformat amount ke format currency Indonesia (titik sebagai pemisah ribuan).
+ * @param {number} amount - Jumlah yang akan diformat.
+ * @returns {string} Amount yang sudah diformat (contoh: "5.000,00")
+ */
+function formatCurrency(amount) {
+  return amount.toLocaleString('id-ID', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  });
+}
+/**
  * Renders the current balance to the #balance element.
  * Computes the total from the module-level `transactions` array and
  * sets the text content of #balance to the formatted value.
  */
 function renderBalance() {
   const balance = calculateBalance(transactions);
-  document.getElementById('balance').textContent = '$' + balance;
+  document.getElementById('balance').textContent = 'Rp' + formatCurrency(parseFloat(balance));
 }
 
 /**
@@ -221,7 +232,7 @@ function renderTransactionList() {
     // Formatted amount
     const amountSpan = document.createElement('span');
     amountSpan.className = 'tx-amount';
-    amountSpan.textContent = '$' + transaction.amount.toFixed(2);
+    amountSpan.textContent = 'Rp' + formatCurrency(transaction.amount);
 
     // Category badge
     const categorySpan = document.createElement('span');
