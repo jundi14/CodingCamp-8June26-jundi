@@ -89,11 +89,15 @@ body > section {
 /* Balance */
 .balance-section {
   background: #fff;
-  padding: 1.25rem 1rem;
+  padding: 1.5rem;
   margin-top: 1rem;
   border-radius: 8px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
   text-align: center;
+  width: 100%;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .balance-section h2 {
@@ -107,10 +111,14 @@ body > section {
   font-weight: 700;
   color: #2c6e49;
 }
-
 /* Transaction List */
 .transactions-section {
   margin-top: 1rem;
+  width: 100%;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
 }
 
 .transactions-section h2 {
@@ -199,7 +207,9 @@ body > section {
   border-radius: 8px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
   width: 100%;
-  max-width: 100%;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -212,13 +222,9 @@ body > section {
 
 #expense-chart {  
   display: block;
-  max-width: fit-content;
-  max-height: fit-content;
-  width: 50% !important;
-  max-width: 50%;
-  margin-left: auto;
-  margin-right: auto;
+  width: 100% !important;
   height: auto !important;
+  max-height: 400px;
   box-sizing: border-box;
 }
 
